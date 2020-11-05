@@ -16,10 +16,13 @@ namespace GradeBook.GradeBooks
         public GradeBookType Type { get; set; }
         public List<Student> Students { get; set; }
 
-        public BaseGradeBook(string name)
+        public bool IsWeighted { get; set; }
+
+        public BaseGradeBook(string name, bool weight)
         {
             Name = name;
             Students = new List<Student>();
+            IsWeighted = weight;
         }
 
         public void AddStudent(Student student)
@@ -121,6 +124,7 @@ namespace GradeBook.GradeBooks
                 case 'F':
                     return 0;
             }
+
             return 0;
         }
 
